@@ -107,6 +107,33 @@ Aztec's toolbar (`AztecToolbar`) manages its own internal button backgrounds/sta
 - Main menu items: Manage Journals, Appearance, Export Notes, Import Notes, About
 - About page: `AboutActivity` with `activity_about.xml` — shows app icon, version (read from PackageInfo), tagline, and feature cards in surface-colored CardViews
 
+## Build Instructions
+
+### Building the APK (from bash/MSYS terminal)
+JAVA_HOME is not set globally — must point to Android Studio's bundled JDK:
+```bash
+export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"
+export PATH="$JAVA_HOME/bin:$PATH"
+./gradlew assembleDebug
+```
+Output: `app/build/outputs/apk/debug/app-debug.apk`
+
+### local.properties (not in git)
+Must exist at project root with SDK path. Write via Node to avoid bash backslash issues:
+```bash
+node -e "require('fs').writeFileSync('local.properties', 'sdk.dir=C\\\\:\\\\\\\\Users\\\\\\\\shoun\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Android\\\\\\\\Sdk\n')"
+```
+
+### GitHub Repository
+- Remote: https://github.com/amishounak/Dailygraph (private)
+- Branch: main
+
+## Known Fixes Applied
+
+### API 35 Edge-to-Edge (fixed 2026-03-23)
+Android 15 enforces edge-to-edge by default, causing toolbar to overlap the status bar and the Aztec formatting toolbar to hide behind the navigation bar.
+**Fix**: Added `<item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>` to `Theme.Dailygraph` in both `values/themes.xml` and `values-night/themes.xml`.
+
 ## Planned Features (not yet implemented)
 - PIN / Biometric Lock
 - Photo Attachments
