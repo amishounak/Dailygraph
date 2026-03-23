@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="10dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/surface">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Profile name -->
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/text_primary"
+                android:fontFamily="sans-serif-medium" />
+
+            <!-- Entry count and created date -->
+            <TextView
+                android:id="@+id/tvProfileMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+
+        <!-- Current badge -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipCurrent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            android:textSize="11sp"
+            app:chipBackgroundColor="@color/accent"
+            app:chipStrokeWidth="0dp"
+            android:textColor="@android:color/white"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp"
+            style="@style/Widget.Material3.Chip.Assist" />
+
+        <!-- Rename button -->
+        <ImageView
+            android:id="@+id/btnRename"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_edit"
+            android:contentDescription="Rename"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/accent" />
+
+        <!-- Delete button -->
+        <ImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete"
+            android:contentDescription="Delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:tint="@color/danger" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,27 @@
+<resources>
+    <style name="Theme.Dailygraph" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+
+        <!-- Cursor color -->
+        <item name="colorControlActivated">@color/accent</item>
+
+        <!-- Rounded popup menus -->
+        <item name="popupMenuStyle">@style/RoundedPopupMenu</item>
+        <item name="android:popupMenuStyle">@style/RoundedPopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/RoundedPopupMenu</item>
+        <item name="android:dropDownListViewStyle">@style/RoundedDropDown</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+
+        <!-- Use iOS-style dialogs by default -->
+        <item name="alertDialogTheme">@style/IOSDialogTheme</item>
+    </style>
+</resources>

@@ -1,0 +1,73 @@
+<resources>
+    <style name="Theme.Dailygraph" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+        <item name="android:fontFamily">sans-serif</item>
+        
+        <!-- Cursor color -->
+        <item name="colorControlActivated">@color/accent</item>
+        
+        <!-- Rounded popup menus (3-dot menu) -->
+        <item name="popupMenuStyle">@style/RoundedPopupMenu</item>
+        <item name="android:popupMenuStyle">@style/RoundedPopupMenu</item>
+        <item name="actionOverflowMenuStyle">@style/RoundedPopupMenu</item>
+
+        <!-- Rounded spinner dropdown -->
+        <item name="android:dropDownListViewStyle">@style/RoundedDropDown</item>
+        <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItem</item>
+        
+        <!-- Use iOS-style dialogs by default -->
+        <item name="alertDialogTheme">@style/IOSDialogTheme</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="IOSDialogTheme" parent="Theme.Material3.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_rounded_bg</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="buttonBarPositiveButtonStyle">@style/IOSDialogButton</item>
+        <item name="buttonBarNegativeButtonStyle">@style/IOSDialogButton</item>
+        <item name="buttonBarNeutralButtonStyle">@style/IOSDialogButton</item>
+    </style>
+
+    <style name="IOSDialogButton" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/accent</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Rounded popup menu (overflow / 3-dot menu) -->
+    <style name="RoundedPopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/popup_rounded_bg</item>
+        <item name="android:overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">4dp</item>
+    </style>
+
+    <!-- Rounded spinner dropdown -->
+    <style name="RoundedDropDown" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:background">@drawable/popup_rounded_bg</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+    <style name="SpinnerDropDownItem" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+</resources>

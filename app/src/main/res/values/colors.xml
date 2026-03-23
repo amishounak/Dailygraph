@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core brand -->
+    <color name="accent">#007AFF</color>              <!-- iOS blue -->
+    <color name="accent_dark">#0055CC</color>
+
+    <!-- Backgrounds -->
+    <color name="background">#F2F2F7</color>          <!-- iOS system groupedBackground -->
+    <color name="surface">#FFFFFF</color>             <!-- card surface -->
+    <color name="header_bg">#EBF4FF</color>           <!-- light blue tint for metadata -->
+    <color name="search_bg">#E5E5EA</color>           <!-- iOS search bar background -->
+
+    <!-- Text -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#6C6C70</color>      <!-- iOS secondaryLabel -->
+    <color name="text_tertiary">#AEAEB2</color>       <!-- iOS tertiaryLabel -->
+
+    <!-- Divider -->
+    <color name="divider">#E5E5EA</color>
+
+    <!-- Format toolbar -->
+    <color name="format_btn_active">#D6EAFF</color>
+    <color name="toolbar_icon">#555555</color>         <!-- subtle gray icons, not full black -->
+    <color name="toolbar_icon_active">#007AFF</color>  <!-- accent blue when toggled on -->
+
+    <!-- Danger -->
+    <color name="danger">#FF3B30</color>              <!-- iOS red -->
+</resources>

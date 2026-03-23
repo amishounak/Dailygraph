@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aztec="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:elevation="0dp">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/ToolbarTitleStyle"
+            app:navigationIconTint="@color/accent" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Header card -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/header_bg">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <LinearLayout
+                            android:id="@+id/loadingGroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:paddingTop="4dp"
+                            android:paddingBottom="4dp"
+                            android:visibility="gone">
+                            <ProgressBar
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:indeterminateTint="@color/accent"
+                                style="?android:attr/progressBarStyleSmall" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Getting location and weather…"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginStart="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvHeaderDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:textColor="@color/text_primary"
+                            android:fontFamily="sans-serif-medium" />
+                        <TextView
+                            android:id="@+id/tvHeaderTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary"
+                            android:layout_marginTop="4dp" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/divider"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginBottom="12dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+                            <TextView
+                                android:id="@+id/tvHeaderLocation"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary" />
+                            <TextView
+                                android:id="@+id/tvHeaderTemp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:textColor="@color/text_secondary"
+                                android:layout_marginStart="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Content: single AztecText for view AND edit -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/surface">
+
+                    <org.wordpress.aztec.AztecText
+                        android:id="@+id/aztecEditor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="300dp"
+                        android:padding="16dp"
+                        android:background="@null"
+                        android:hint="Write your thoughts…"
+                        android:textColorHint="@color/text_tertiary"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:lineSpacingMultiplier="1.5"
+                        android:gravity="top"
+                        android:scrollbars="vertical"
+                        android:imeOptions="flagNoExtractUi"
+                        aztec:historyEnable="true" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Hidden: required by Aztec.with() -->
+                <org.wordpress.aztec.source.SourceViewEditText
+                    android:id="@+id/aztecSource"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="gone"
+                    android:inputType="textNoSuggestions|textMultiLine"
+                    android:imeOptions="flagNoExtractUi" />
+
+                <!-- Buttons -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Save"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/accent"
+                    app:cornerRadius="14dp"
+                    android:visibility="gone" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Update"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/white"
+                    app:backgroundTint="@color/accent"
+                    app:cornerRadius="14dp"
+                    android:visibility="gone" />
+                <LinearLayout
+                    android:id="@+id/layoutEditButtons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnCancelEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Cancel"
+                        android:textSize="16sp"
+                        android:textColor="@color/accent"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:strokeColor="@color/accent"
+                        app:cornerRadius="14dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSaveUpdate"
+                        android:layout_width="0dp"
+                        android:layout_height="52dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Save"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/white"
+                        app:backgroundTint="@color/accent"
+                        app:cornerRadius="14dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvVersionIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_tertiary"
+                    android:visibility="gone"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- Aztec toolbar with themed container -->
+        <LinearLayout
+            android:id="@+id/toolbarContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/surface"
+            android:elevation="4dp"
+            android:visibility="gone">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider" />
+            <org.wordpress.aztec.toolbar.AztecToolbar
+                android:id="@+id/formattingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:background="@color/surface" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
