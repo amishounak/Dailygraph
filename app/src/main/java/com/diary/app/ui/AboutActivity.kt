@@ -1,5 +1,7 @@
 package com.diary.app.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,10 @@ class AboutActivity : AppCompatActivity() {
             binding.tvVersion.text = "Version ${pInfo.versionName}"
         } catch (_: Exception) {
             binding.tvVersion.text = "Version 1.0"
+        }
+
+        binding.cardGithub.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/amishounak/Dailygraph")))
         }
     }
 
