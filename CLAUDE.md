@@ -131,7 +131,7 @@ node -e "require('fs').writeFileSync('local.properties', 'sdk.dir=C\\\\:\\\\\\\\
 ## Known Fixes Applied
 
 ### Release Signing (added 2026-03-29)
-Added `signingConfigs` block in `app/build.gradle.kts` referencing `../release-keystore.jks` (alias: `dailygraph`). Keystore is covered by `*.jks` in `.gitignore`. Credentials are stored in `keystore.properties` (also gitignored). Backup keystore is at `D:\My Drive\Google Play Keystore\Dailygraph-release-keystore.jks`.
+Added `signingConfigs` block in `app/build.gradle.kts` referencing `../release-keystore.jks` (alias: `key0`). This is the **original upload key** registered with Google Play — a different key will be rejected. Keystore is covered by `*.jks` in `.gitignore`. Credentials are stored in `keystore.properties` (also gitignored). Backup keystore is at `D:\My Drive\Google Play Keystore\Dailygraph-release-keystore.jks` (also saved as `GooglePlayKeyStore` in the same folder).
 
 To set up signing on a new machine:
 1. Copy `Dailygraph-release-keystore.jks` from Google Drive to the project root and rename to `release-keystore.jks`
@@ -139,7 +139,7 @@ To set up signing on a new machine:
 ```
 storeFile=../release-keystore.jks
 storePassword=dtt1992shnk
-keyAlias=dailygraph
+keyAlias=key0
 keyPassword=dtt1992shnk
 ```
 
