@@ -125,7 +125,7 @@ node -e "require('fs').writeFileSync('local.properties', 'sdk.dir=C\\\\:\\\\\\\\
 ```
 
 ### GitHub Repository
-- Remote: https://github.com/amishounak/Dailygraph (private)
+- Remote: https://github.com/amishounak/Dailygraph (public)
 - Branch: main
 
 ## Known Fixes Applied

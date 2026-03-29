@@ -99,7 +99,7 @@ If `org.wordpress:aztec:v2.1.6` fails to resolve, uncomment the JitPack fallback
 
 ## License
 
-Private project. Not open source.
+[MIT License](LICENSE) — Copyright (c) 2026 Shounak Datta
 
 ---
 
