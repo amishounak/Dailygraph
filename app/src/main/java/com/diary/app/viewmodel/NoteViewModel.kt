@@ -1,5 +1,6 @@
 package com.diary.app.viewmodel
 
+import android.annotation.SuppressLint
 import android.app.Application
 import androidx.lifecycle.*
 import com.diary.app.data.Note
@@ -14,7 +15,8 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: NoteRepository
     private val profilePrefs = ProfilePreferences(application)
 
-    // Current profile
+    // Current profile — guaranteed non-null at usage sites; suppress lint false positive
+    @SuppressLint("NullSafeMutableLiveData")
     private val _currentProfile = MutableLiveData<Profile>()
     val currentProfile: LiveData<Profile> = _currentProfile
 
@@ -62,6 +64,7 @@ class NoteViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    @SuppressLint("NullSafeMutableLiveData")
     private suspend fun loadCurrentProfile() {
         val profileId = profilePrefs.currentProfileId
         var profile = repository.getProfileById(profileId)

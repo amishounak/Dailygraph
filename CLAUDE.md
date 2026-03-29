@@ -130,6 +130,19 @@ node -e "require('fs').writeFileSync('local.properties', 'sdk.dir=C\\\\:\\\\\\\\
 
 ## Known Fixes Applied
 
+### Release Signing (added 2026-03-29)
+Added `signingConfigs` block in `app/build.gradle.kts` referencing `../release-keystore.jks` (alias: `dailygraph`). Keystore is covered by `*.jks` in `.gitignore`. Credentials are stored in `keystore.properties` (also gitignored). Backup keystore is at `D:\My Drive\Google Play Keystore\Dailygraph-release-keystore.jks`.
+
+To set up signing on a new machine:
+1. Copy `Dailygraph-release-keystore.jks` from Google Drive to the project root and rename to `release-keystore.jks`
+2. Create `keystore.properties` at the project root:
+```
+storeFile=../release-keystore.jks
+storePassword=dtt1992shnk
+keyAlias=dailygraph
+keyPassword=dtt1992shnk
+```
+
 ### API 35 Edge-to-Edge (fixed 2026-03-23)
 Android 15 enforces edge-to-edge by default, causing toolbar to overlap the status bar and the Aztec formatting toolbar to hide behind the navigation bar.
 **Fix**: Added `<item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>` to `Theme.Dailygraph` in both `values/themes.xml` and `values-night/themes.xml`.
