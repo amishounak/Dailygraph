@@ -143,6 +143,10 @@ keyAlias=key0
 keyPassword=dtt1992shnk
 ```
 
+### Version Code Bump (fixed 2026-03-29)
+Version code 1 was consumed by an initial draft upload to Play Console (even though it was never published). Play Console does not allow reusing version codes.
+**Fix**: Bumped `versionCode` from 1 → 2 and `versionName` from `"1.0"` → `"1.0.1"` in `app/build.gradle.kts`.
+
 ### API 35 Edge-to-Edge (fixed 2026-03-23)
 Android 15 enforces edge-to-edge by default, causing toolbar to overlap the status bar and the Aztec formatting toolbar to hide behind the navigation bar.
 **Fix**: Added `<item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>` to `Theme.Dailygraph` in both `values/themes.xml` and `values-night/themes.xml`.
