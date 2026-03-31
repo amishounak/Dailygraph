@@ -19,6 +19,9 @@ Format: `[version] — date — description`
 - Privacy policy published at `https://raw.githubusercontent.com/amishounak/Dailygraph/main/PRIVACY_POLICY.md`
 - GitHub release created with sideload APK
 
+### Known Limitation
+- **Signing conflict**: Users who have the Play Store version installed cannot directly install the sideload APK over it. Google Play App Signing uses a different key than the sideload APK. Users must export journals → uninstall → install APK → import journals.
+
 ### Play Store Status (as of 2026-04-01)
 - Track: Closed Testing (Alpha) — **Active**
 - Release: 2 (1.0.1) — approved and live

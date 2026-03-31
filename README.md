@@ -15,6 +15,16 @@ Built with Kotlin, MVVM architecture, Material 3 design, and the WordPress Aztec
 
 > Enable **Install from unknown sources** in your Android settings before sideloading.
 
+### ⚠️ Switching from Play Store to Sideload APK
+
+If you have the **Play Store (closed testing) version** installed, you **cannot** install the sideload APK directly on top of it. Google Play re-signs apps with its own key — Android blocks installing a different-key APK over an existing app.
+
+**Steps to switch:**
+1. **Export your journals first** — Menu → Export Notes → save the JSON backup file
+2. Uninstall Dailygraph from your device
+3. Install `Dailygraph-v1.0.1.apk`
+4. Restore — Menu → Import Notes → select your backup file
+
 ## Features
 
 ### Rich Text Editor

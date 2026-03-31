@@ -180,9 +180,17 @@ Android 15 enforces edge-to-edge by default, causing toolbar to overlap the stat
 **Step 2 — Build**
 - [ ] `./gradlew assembleRelease` → produces `app-release.apk` (for GitHub sideload)
 - [ ] `./gradlew bundleRelease` → produces `app-release.aab` (for Play Store)
+- [ ] Copy APK with proper name (the `#` rename in `gh release create` does NOT work on Windows):
+  ```bash
+  cp app/build/outputs/apk/release/app-release.apk Dailygraph-vX.X.X.apk
+  ```
 
 **Step 3 — GitHub Release**
-- [ ] `gh release create vX.X.X "path/to/app-release.apk#Dailygraph-vX.X.X.apk" --title "Dailygraph vX.X.X" --notes "..."`
+- [ ] Use the renamed copy, NOT the original build output file (otherwise README links will 404):
+  ```bash
+  gh release create vX.X.X "Dailygraph-vX.X.X.apk" --title "Dailygraph vX.X.X" --notes "..."
+  ```
+- [ ] Verify asset name after upload: `gh api repos/amishounak/Dailygraph/releases/tags/vX.X.X --jq '.assets[].name'`
 
 **Step 4 — Play Store**
 - [ ] Go to Play Console → Dailygraph → Closed Testing → Create new release
@@ -196,6 +204,23 @@ Android 15 enforces edge-to-edge by default, causing toolbar to overlap the stat
 - [ ] Update "Current Version" table in this CLAUDE.md
 - [ ] Update "Play Store Status" section in this CLAUDE.md
 - [ ] Commit and push all doc changes
+
+## Known Distribution Issues
+
+### Play Store vs Sideload Signing Conflict
+**Symptom**: "App not installed as package conflicts with an existing package" when trying to install the sideload APK on a device that already has Dailygraph from Google Play.
+
+**Cause**: Google Play App Signing re-signs the app with Google's own key before delivering it to users. The sideloaded APK is signed with the original upload keystore. Android treats these as two different apps and blocks the install.
+
+**User instructions (always include this in release notes and README):**
+1. **Export journals first** — Menu → Export Notes → save the JSON backup file
+2. Uninstall Dailygraph from the device
+3. Install the sideload APK
+4. Restore — Menu → Import Notes → select the backup file
+
+**Long-term fix options** (for future consideration):
+- Accept that sideloading and Play Store installs cannot coexist — users must pick one
+- Disable Google Play App Signing (not possible after enrollment — it's permanent)
 
 ## Planned Features (not yet implemented)
 - PIN / Biometric Lock
