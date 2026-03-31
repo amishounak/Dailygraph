@@ -156,9 +156,9 @@ Android 15 enforces edge-to-edge by default, causing toolbar to overlap the stat
 ### Current Version
 | Field | Value |
 |---|---|
-| versionName | 1.0.1 |
-| versionCode | 2 |
-| GitHub Release | [v1.0.1](https://github.com/amishounak/Dailygraph/releases/tag/v1.0.1) |
+| versionName | 1.0.2 |
+| versionCode | 3 |
+| GitHub Release | [v1.0.2](https://github.com/amishounak/Dailygraph/releases/tag/v1.0.2) |
 | Play Store Track | Closed Testing (Alpha) — Active |
 | Play Store Package | `com.dailygraph.app` |
 | Privacy Policy URL | `https://raw.githubusercontent.com/amishounak/Dailygraph/main/PRIVACY_POLICY.md` |

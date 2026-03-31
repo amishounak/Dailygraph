@@ -33,14 +33,15 @@
                 android:textColor="@color/text_primary"
                 android:fontFamily="sans-serif-medium" />
 
-            <!-- Entry count and created date -->
+            <!-- Entry count (line 1) and created date (line 2) -->
             <TextView
                 android:id="@+id/tvProfileMeta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13sp"
                 android:textColor="@color/text_secondary"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="4dp"
+                android:lineSpacingExtra="2dp" />
 
         </LinearLayout>
 

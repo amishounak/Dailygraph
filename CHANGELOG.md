@@ -5,6 +5,13 @@ Format: `[version] — date — description`
 
 ---
 
+## [1.0.2] — 2026-04-01
+
+### Fixed
+- **Journal card text wrapping** — On smaller screens, "0 entries · Created Mar 31, 2026" was wrapping mid-sentence (e.g. "2026" spilling to the next line). Fixed by splitting into two lines: entry count on line 1, created date on line 2. Changed separator from `" · "` to `"\n"` in `ProfileAdapter.bind()`. Added `lineSpacingExtra="2dp"` to `tvProfileMeta` in `item_profile.xml` for readability.
+
+---
+
 ## [1.0.1] — 2026-03-30
 
 ### Changed

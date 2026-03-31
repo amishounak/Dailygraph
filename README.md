@@ -6,11 +6,11 @@ Built with Kotlin, MVVM architecture, Material 3 design, and the WordPress Aztec
 
 ## Download
 
-**Latest: v1.0.1** — See [CHANGELOG.md](CHANGELOG.md) for version history.
+**Latest: v1.0.2** — See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 | Platform | Link |
 |---|---|
-| Sideload APK | [Dailygraph-v1.0.1.apk](https://github.com/amishounak/Dailygraph/releases/download/v1.0.1/Dailygraph-v1.0.1.apk) |
+| Sideload APK | [Dailygraph-v1.0.2.apk](https://github.com/amishounak/Dailygraph/releases/download/v1.0.2/Dailygraph-v1.0.2.apk) |
 | Google Play (closed testing) | [Join the beta](https://play.google.com/apps/testing/com.dailygraph.app) |
 
 > Enable **Install from unknown sources** in your Android settings before sideloading.

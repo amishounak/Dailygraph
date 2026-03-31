@@ -35,7 +35,7 @@ class ProfileAdapter(
             val dateFormat = SimpleDateFormat("MMM d, yyyy", Locale.getDefault())
             val createdDate = dateFormat.format(Date(item.profile.createdAt))
             val entriesLabel = if (item.entryCount == 1) "entry" else "entries"
-            binding.tvProfileMeta.text = "${item.entryCount} $entriesLabel · Created $createdDate"
+            binding.tvProfileMeta.text = "${item.entryCount} $entriesLabel\nCreated $createdDate"
 
             // Show Default badge based on isDefault flag in database
             binding.chipCurrent.visibility = if (item.profile.isDefault) View.VISIBLE else View.GONE
