@@ -151,6 +151,52 @@ Version code 1 was consumed by an initial draft upload to Play Console (even tho
 Android 15 enforces edge-to-edge by default, causing toolbar to overlap the status bar and the Aztec formatting toolbar to hide behind the navigation bar.
 **Fix**: Added `<item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>` to `Theme.Dailygraph` in both `values/themes.xml` and `values-night/themes.xml`.
 
+## Release Tracking
+
+### Current Version
+| Field | Value |
+|---|---|
+| versionName | 1.0.1 |
+| versionCode | 2 |
+| GitHub Release | [v1.0.1](https://github.com/amishounak/Dailygraph/releases/tag/v1.0.1) |
+| Play Store Track | Closed Testing (Alpha) — Active |
+| Play Store Package | `com.dailygraph.app` |
+| Privacy Policy URL | `https://raw.githubusercontent.com/amishounak/Dailygraph/main/PRIVACY_POLICY.md` |
+
+### Play Store Status (last updated 2026-04-01)
+- Closed testing release 2 (1.0.1): **Active and approved**
+- Countries: 177
+- Tester email list: "Shounak" — 5 emails
+- Opted-in testers: pending (14-day countdown not yet started)
+- Closed testing opt-in link: `https://play.google.com/apps/testing/com.dailygraph.app`
+
+### Release Checklist (do this every time you release a new version)
+
+**Step 1 — Code**
+- [ ] Update `versionCode` (+1) and `versionName` in `app/build.gradle.kts`
+- [ ] Test on a real device
+- [ ] Commit and push to GitHub
+
+**Step 2 — Build**
+- [ ] `./gradlew assembleRelease` → produces `app-release.apk` (for GitHub sideload)
+- [ ] `./gradlew bundleRelease` → produces `app-release.aab` (for Play Store)
+
+**Step 3 — GitHub Release**
+- [ ] `gh release create vX.X.X "path/to/app-release.apk#Dailygraph-vX.X.X.apk" --title "Dailygraph vX.X.X" --notes "..."`
+
+**Step 4 — Play Store**
+- [ ] Go to Play Console → Dailygraph → Closed Testing → Create new release
+- [ ] Upload the `.aab` file (NOT the `.apk`)
+- [ ] Fill in release notes
+- [ ] Save and submit for review
+
+**Step 5 — Documentation**
+- [ ] Add entry to `CHANGELOG.md`
+- [ ] Update version numbers in `README.md` download links
+- [ ] Update "Current Version" table in this CLAUDE.md
+- [ ] Update "Play Store Status" section in this CLAUDE.md
+- [ ] Commit and push all doc changes
+
 ## Planned Features (not yet implemented)
 - PIN / Biometric Lock
 - Photo Attachments
